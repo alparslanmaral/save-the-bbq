@@ -9,6 +9,7 @@ Rogue-lite, TFT tarzı tower defense. Tarayıcıda çalışır, kurulum gerektir
 - **Board:** 6x4 damalı piknik örtüsü. Birimleri bench'ten sürükleyip yerleştir. Düşmanlar sağdan gelir, önce birimlerine sonra aileye saldırır. Aile de karşılık verip az da olsa hasar verir.
 - **🧺 Picnic Basket:** Her hazırlık aşamasında 5 rastgele birim. Sepeti yenilemek **1 aile canına** mal olur.
 - **⭐ Birleştirme:** Aynı birimden 3 kopya = otomatik bir üst yıldız (can + hasar x2.2, maks 3⭐). TFT'deki gibi.
+- **📈 Seviye & Birim Sınırı:** Board'a koyabileceğin birim sayısı oyuncu seviyene bağlı — başlangıç 2. Her dalga +2 XP, parayla XP satın alınabilir (4$ = 4 XP), seviye eşikleri giderek pahalanır. Bölüm tavanları: dalga 1-10 → 5, 11-20 → 8, 21-30 → 12, 31-50 → 16 birim.
 - **✨ Boost'lar:** Family, Machine, Scum, Household, Dad Lore. Aynı boost'tan ne kadar çok birim, o kadar güçlü etki (TFT breakpoint mantığı).
 - **💵 Dolar:** Savaşta zamanla + dalga sonunda kazanılır, run bitince sıfırlanır.
 - **🏅 RP (Respect Point):** Boss dalgasına ulaşınca +1, bossu öldürünce +2. **Kalıcıdır** — Yetenek Ağacı'nda harcanır.
@@ -85,3 +86,6 @@ Kod açmadan `data/waves.json` üzerinden ayarlanır:
 - `goldPerWave`, `passiveGold`, `startingGold`: ekonomi
 - `familyStartHp`, `familyThornDamage`: aile
 - `episodes[].pool / countBase / spawnInterval`: dalga kompozisyonu
+- `leveling.levels`: seviye başına birim sınırı ve XP eşikleri
+- `leveling.waveCaps`: bölüm başına maksimum birim tavanı
+- `leveling.xpPerWave / xpBuyAmount / xpBuyCost`: XP ekonomisi

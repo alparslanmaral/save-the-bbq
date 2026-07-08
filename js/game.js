@@ -52,6 +52,8 @@ function newRun() {
     traitTimers: {},
     speed: 1,
     elapsed: 0,
+    playerLevel: 1,
+    xp: 0,
     rpEarned: 0,
     bossRewarded: {},
     startTime: Date.now()
@@ -179,6 +181,42 @@ function boardUnits() {
     if (G.board[r][c]) list.push(G.board[r][c]);
   }
   return list;
+}
+
+/* ---------------- Oyuncu Seviyesi & Birim Sınırı ---------------- */
+function levelConf() {
+  return DB.waves.leveling.levels.find(l => l.level === G.playerLevel) || DB.waves.leveling.levels[0];
+}
+
+function waveCap() {
+  const wc = DB.waves.leveling.waveCaps.find(w => G.level >= w.from && G.level <= w.to);
+  return wc ? wc.cap : 16;
+}
+
+function unitCap() {
+  return Math.min(levelConf().cap, waveCap());
+}
+
+function gainXP(amount) {
+  const lvls = DB.waves.leveling.levels;
+  const maxLevel = lvls[lvls.length - 1].level;
+  G.xp += amount;
+  while (G.playerLevel < maxLevel && G.xp >= levelConf().xpToNext) {
+    G.xp -= levelConf().xpToNext;
+    G.playerLevel++;
+    toast(`Seviye atladın! Lv ${G.playerLevel} — birim sınırı: ${levelConf().cap}`, 'good');
+  }
+}
+
+function buyXP() {
+  if (G.phase !== 'prep') return;
+  const lv = DB.waves.leveling;
+  const lvls = lv.levels;
+  if (G.playerLevel >= lvls[lvls.length - 1].level) { toast('Maksimum seviyedesin!', 'bad'); return; }
+  if (G.gold < lv.xpBuyCost) { toast('Yeterli doların yok!', 'bad'); return; }
+  G.gold -= lv.xpBuyCost;
+  gainXP(lv.xpBuyAmount);
+  renderAll();
 }
 
 /* ---------------- Boost (Trait) sistemi ---------------- */
@@ -319,6 +357,7 @@ function endWave(victory) {
   let reward = DB.waves.goldPerWave + m.waveGold + traitBonus('income');
   G.gold += reward;
   toast(`Dalga temizlendi! +${reward}$`, 'good');
+  gainXP(DB.waves.leveling.xpPerWave);
 
   if (isBossLevel() && !G.bossRewarded['kill' + G.level]) {
     G.bossRewarded['kill' + G.level] = true;

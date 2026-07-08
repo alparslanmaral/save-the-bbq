@@ -8,6 +8,29 @@
   "startingGold": 8,
   "familyStartHp": 50,
   "familyThornDamage": 15,
+  "leveling": {
+    "xpPerWave": 2,
+    "xpBuyAmount": 4,
+    "xpBuyCost": 4,
+    "levels": [
+      { "level": 1, "cap": 2, "xpToNext": 2 },
+      { "level": 2, "cap": 3, "xpToNext": 8 },
+      { "level": 3, "cap": 4, "xpToNext": 16 },
+      { "level": 4, "cap": 5, "xpToNext": 28 },
+      { "level": 5, "cap": 6, "xpToNext": 44 },
+      { "level": 6, "cap": 8, "xpToNext": 64 },
+      { "level": 7, "cap": 10, "xpToNext": 90 },
+      { "level": 8, "cap": 12, "xpToNext": 120 },
+      { "level": 9, "cap": 14, "xpToNext": 156 },
+      { "level": 10, "cap": 16, "xpToNext": 0 }
+    ],
+    "waveCaps": [
+      { "from": 1, "to": 10, "cap": 5 },
+      { "from": 11, "to": 20, "cap": 8 },
+      { "from": 21, "to": 30, "cap": 12 },
+      { "from": 31, "to": 50, "cap": 16 }
+    ]
+  },
   "episodes": [
     {
       "name": "Backyard Basics",

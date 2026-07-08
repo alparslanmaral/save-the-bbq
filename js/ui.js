@@ -271,8 +271,31 @@ function renderTraits() {
   }).join('');
 }
 
+function renderLevelBox() {
+  const lv = DB.waves.leveling;
+  const conf = levelConf();
+  const maxLevel = lv.levels[lv.levels.length - 1].level;
+  const onBoard = boardUnits().length;
+  const cap = unitCap();
+  $('#lv-num').textContent = 'Lv ' + G.playerLevel;
+  $('#lv-cap').textContent = `Birim ${onBoard}/${cap}`;
+  $('#lv-cap').classList.toggle('full', onBoard >= cap);
+  const pct = G.playerLevel >= maxLevel ? 100 : clamp(G.xp / conf.xpToNext * 100, 0, 100);
+  $('#xp-fill').style.width = pct + '%';
+  $('#xp-fill').title = G.playerLevel >= maxLevel ? 'MAX' : `${G.xp}/${conf.xpToNext} XP`;
+  const btn = $('#btn-buy-xp');
+  btn.textContent = `📈 XP Al (${lv.xpBuyCost}$)`;
+  btn.disabled = G.phase !== 'prep' || G.playerLevel >= maxLevel || G.gold < lv.xpBuyCost;
+  // Dalga tavanı bilgisi
+  const wc = waveCap();
+  $('#lv-num').title = conf.cap > wc
+    ? `Bu bölümün tavanı: ${wc} birim (dalga ${G.level})`
+    : `Sonraki seviyede sınır: ${(lv.levels.find(l => l.level === G.playerLevel + 1) || conf).cap}`;
+}
+
 function renderAll() {
   renderHud();
+  renderLevelBox();
   renderBench();
   renderShop();
   renderTraits();
@@ -327,6 +350,11 @@ window.addEventListener('pointerup', ev => {
     const r = +cell.dataset.r, c = +cell.dataset.c;
     const occupant = G.board[r][c];
     const fromBoard = unit.r >= 0;
+    if (!fromBoard && !occupant && boardUnits().length >= unitCap()) {
+      toast(`Birim sınırı: ${unitCap()}! Seviye atla veya birim değiştir.`, 'bad');
+      renderAll();
+      return;
+    }
     if (occupant && occupant.uid !== unit.uid) {
       // Yer değiştir
       if (fromBoard) {
@@ -377,6 +405,7 @@ async function init() {
   $('#howto-close').onclick = () => $('#howto-overlay').classList.remove('show');
   $('#st-back').onclick = () => showScreen('menu');
   $('#btn-reroll').onclick = () => rollShop(false);
+  $('#btn-buy-xp').onclick = () => buyXP();
   $('#btn-start-wave').onclick = () => startWave();
   $('#btn-speed').onclick = () => { G.speed = G.speed === 1 ? 2 : 1; renderHud(); };
   $('#btn-quit').onclick = () => {

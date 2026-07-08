@@ -317,6 +317,26 @@ h1, h2, h3, .logo, .btn.primary.big { font-family: 'Titan One', cursive; letter-
 }
 #prep-bar.combat { opacity: .55; pointer-events: none; }
 
+#level-box {
+  background: var(--charcoal); border: 3px solid #000; border-radius: var(--radius);
+  padding: 8px 12px;
+  display: flex; flex-direction: column; gap: 5px;
+  min-width: 150px;
+}
+.lv-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.lv-top b { color: var(--mustard); font-size: 15px; }
+.lv-top span { color: var(--paper); font-size: 12px; font-weight: 800; }
+.lv-top span.full { color: #ff9a90; }
+.xp-bar {
+  height: 8px; background: #47423a; border: 2px solid #000;
+  border-radius: 6px; overflow: hidden;
+}
+.xp-bar i {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(90deg, #6FA8DC, #9ecdf5);
+  transition: width .25s;
+}
+
 #bench-wrap {
   flex: 1;
   background: var(--charcoal); border: 3px solid #000; border-radius: var(--radius);
