@@ -1,0 +1,74 @@
+[
+  {
+    "id": "family_hp",
+    "name": "Bigger Family Table",
+    "emoji": "❤️",
+    "desc": "Ailenin başlangıç canı +5",
+    "maxRank": 5,
+    "cost": 2,
+    "effect": { "type": "familyHp", "value": 5 }
+  },
+  {
+    "id": "start_gold",
+    "name": "Dad's Wallet",
+    "emoji": "👛",
+    "desc": "Başlangıç doları +3",
+    "maxRank": 3,
+    "cost": 2,
+    "effect": { "type": "startGold", "value": 3 }
+  },
+  {
+    "id": "income_speed",
+    "name": "Overtime Pay",
+    "emoji": "⏱️",
+    "desc": "Pasif dolar kazanma süresi %10 kısalır",
+    "maxRank": 3,
+    "cost": 3,
+    "effect": { "type": "incomeSpeed", "value": 0.10 }
+  },
+  {
+    "id": "unit_damage",
+    "name": "Protein Diet",
+    "emoji": "💪",
+    "desc": "Tüm birimlerin hasarı +%6",
+    "maxRank": 5,
+    "cost": 3,
+    "effect": { "type": "unitDamage", "value": 0.06 }
+  },
+  {
+    "id": "unit_hp",
+    "name": "Sunscreen SPF 50+",
+    "emoji": "🧴",
+    "desc": "Tüm birimlerin canı +%6",
+    "maxRank": 5,
+    "cost": 3,
+    "effect": { "type": "unitHp", "value": 0.06 }
+  },
+  {
+    "id": "free_reroll",
+    "name": "Basket Coupon",
+    "emoji": "🎟️",
+    "desc": "Her hazırlık aşamasında 1 ücretsiz sepet yenileme",
+    "maxRank": 1,
+    "cost": 6,
+    "effect": { "type": "freeReroll", "value": 1 }
+  },
+  {
+    "id": "wave_gold",
+    "name": "Side Hustle",
+    "emoji": "💰",
+    "desc": "Dalga sonu dolar ödülü +2",
+    "maxRank": 3,
+    "cost": 2,
+    "effect": { "type": "waveGold", "value": 2 }
+  },
+  {
+    "id": "good_seller",
+    "name": "Garage Sale Pro",
+    "emoji": "🏷️",
+    "desc": "Birim satışında fiyatın %75'ini alırsın (normalde %50)",
+    "maxRank": 1,
+    "cost": 5,
+    "effect": { "type": "sellRate", "value": 0.25 }
+  }
+]

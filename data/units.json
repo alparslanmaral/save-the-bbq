@@ -1,0 +1,134 @@
+[
+  {
+    "id": "flipper_zipper",
+    "name": "Flipper Zipper",
+    "emoji": "🩴",
+    "color": "#4FA3D9",
+    "hp": 1500,
+    "cost": 4,
+    "traits": ["family", "machine"],
+    "desc": "En yakın düşmana saniyede 1 terlik fırlatır. Her terlik 30 hasar verir.",
+    "ability": { "type": "shooter", "damage": 30, "interval": 1.0, "range": 7 }
+  },
+  {
+    "id": "coke_explosion",
+    "name": "Coke Explosion",
+    "emoji": "🥤",
+    "color": "#B0402F",
+    "hp": 500,
+    "cost": 3,
+    "traits": ["scum"],
+    "desc": "Her 5 saniyede rastgele 3 hücreye kola fışkırtır: düşmanlara 3 sn boyunca 40 hasar/sn, savunma birimlerine 10 can/sn.",
+    "ability": { "type": "splash_random", "cells": 3, "interval": 5, "dps": 40, "heal": 10, "duration": 3 }
+  },
+  {
+    "id": "dad_joke_sign",
+    "name": "Dad Joke Sign",
+    "emoji": "🪧",
+    "color": "#C9973B",
+    "hp": 200,
+    "cost": 2,
+    "traits": ["family", "dadlore"],
+    "desc": "En yakın düşmanı kötü bir baba şakasıyla 2 saniye stunlar. 6 saniye cooldown.",
+    "ability": { "type": "stunner", "stun": 2, "cooldown": 6, "range": 6 }
+  },
+  {
+    "id": "cousin_jimmy",
+    "name": "Cousin Jimmy",
+    "emoji": "🪃",
+    "color": "#7A9E4F",
+    "hp": 600,
+    "cost": 3,
+    "traits": ["family", "scum"],
+    "desc": "Sapanla 2 saniyede bir taş atar. Her taş 30 hasar verir.",
+    "ability": { "type": "shooter", "damage": 30, "interval": 2.0, "range": 8 }
+  },
+  {
+    "id": "radioactive_tupperware",
+    "name": "Radioactive Tupperware",
+    "emoji": "☣️",
+    "color": "#7DC257",
+    "hp": 100,
+    "cost": 1,
+    "traits": ["household"],
+    "desc": "Kırıldığı anda 1 hücre yarıçapında zehirli gaz bulutu bırakır. Gazın içindeki düşmanlar saniyede 10 hasar alır.",
+    "ability": { "type": "gas_on_death", "dps": 10, "radius": 1.2, "duration": 6 }
+  },
+  {
+    "id": "tv_remote",
+    "name": "TV Remote",
+    "emoji": "📺",
+    "color": "#8B8B9E",
+    "hp": 50,
+    "cost": 1,
+    "traits": ["dadlore"],
+    "desc": "Kırıldığında 'I AM WATCHING THAT!' nidasıyla kıran düşmanın kafasına 100 hasarlık yıldırım düşer.",
+    "ability": { "type": "zap_on_death", "damage": 100 }
+  },
+  {
+    "id": "esky_cooler",
+    "name": "Esky Cooler",
+    "emoji": "🧊",
+    "color": "#5BB6C9",
+    "hp": 2500,
+    "cost": 3,
+    "traits": ["household"],
+    "desc": "Buz gibi soğuk, kaya gibi sağlam. Saldırmaz ama düşmanları uzun süre oyalar.",
+    "ability": { "type": "none" }
+  },
+  {
+    "id": "sprinkler_3000",
+    "name": "Sprinkler 3000",
+    "emoji": "⛲",
+    "color": "#6FA8DC",
+    "hp": 400,
+    "cost": 2,
+    "traits": ["machine", "household"],
+    "desc": "Etrafındaki düşmanları ıslatır: 1.5 hücre yarıçapındaki düşmanlar %35 yavaşlar.",
+    "ability": { "type": "slow_aura", "radius": 1.5, "slow": 0.35 }
+  },
+  {
+    "id": "bug_zapper",
+    "name": "Bug Zapper",
+    "emoji": "⚡",
+    "color": "#B67CD6",
+    "hp": 700,
+    "cost": 4,
+    "traits": ["machine"],
+    "desc": "1.5 saniyede bir 25 hasarlık elektrik atar, elektrik 3 düşmana kadar zıplar.",
+    "ability": { "type": "chain_zap", "damage": 25, "interval": 1.5, "chains": 3, "range": 5 }
+  },
+  {
+    "id": "aunt_gossip",
+    "name": "Aunt Gossip",
+    "emoji": "☕",
+    "color": "#C77BA0",
+    "hp": 800,
+    "cost": 3,
+    "traits": ["family", "scum"],
+    "desc": "Dedikodusuyla morali bozar: 2 hücre içindeki düşmanların verdiği hasar %15 azalır.",
+    "ability": { "type": "weaken_aura", "radius": 2, "reduce": 0.15 }
+  },
+  {
+    "id": "lemonade_stand",
+    "name": "Lemonade Stand",
+    "emoji": "🍋",
+    "color": "#E8C93F",
+    "hp": 300,
+    "cost": 2,
+    "traits": ["scum", "household"],
+    "desc": "Kapitalizmin gücü: savaş sırasında her 6 saniyede 1$ kazandırır.",
+    "ability": { "type": "income", "amount": 1, "interval": 6 }
+  },
+  {
+    "id": "uncle_grill",
+    "name": "Uncle Grill",
+    "emoji": "🔥",
+    "color": "#E06A2B",
+    "hp": 1200,
+    "cost": 4,
+    "traits": ["family", "dadlore"],
+    "desc": "Maşasıyla yakın mesafede alev püskürtür: 0.5 saniyede bir 20 hasar.",
+    "ability": { "type": "shooter", "damage": 20, "interval": 0.5, "range": 2.5 }
+  }
+]

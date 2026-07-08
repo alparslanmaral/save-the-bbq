@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save the BBQ — İçerik Editörü</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/editor.css">
+</head>
+<body class="editor-body">
+
+  <header class="ed-topbar">
+    <a class="btn small" href="index.html">← Oyuna Dön</a>
+    <h1>🛠️ İçerik Editörü</h1>
+    <div class="ed-actions">
+      <button class="btn small" id="btn-export">📤 JSON Dışa Aktar</button>
+      <button class="btn small" id="btn-import">📥 İçe Aktar</button>
+      <button class="btn small warn" id="btn-reset">♻️ Varsayılanlara Dön</button>
+      <input type="file" id="import-file" accept=".json" hidden>
+    </div>
+  </header>
+
+  <p class="ed-hint">Buradan yaptığın tüm değişiklikler tarayıcında saklanır ve oyun otomatik olarak kullanır.
+  Değişikliklerini kalıcı olarak projeye eklemek istersen <b>JSON Dışa Aktar</b> ile indirip <code>data/</code> klasöründeki dosyaların üzerine yazman yeterli.
+  Karakter çizimlerin hazır olunca da her kayda bir <b>görsel yolu</b> (örn. <code>img/units/flipper.png</code>) ekleyebilirsin — şimdilik emoji sembolü kullanılıyor.</p>
+
+  <nav class="ed-tabs">
+    <button class="ed-tab active" data-tab="units">🛡️ Savunma Birimleri</button>
+    <button class="ed-tab" data-tab="enemies">☠️ Düşmanlar</button>
+    <button class="ed-tab" data-tab="bosses">👑 Bosslar</button>
+    <button class="ed-tab" data-tab="traits">✨ Boost'lar</button>
+  </nav>
+
+  <main class="ed-layout">
+    <aside class="ed-list-panel">
+      <button class="btn primary" id="btn-new">＋ Yeni Ekle</button>
+      <div id="ed-list"></div>
+    </aside>
+    <section class="ed-form-panel" id="ed-form-panel">
+      <p class="muted">Soldan bir kayıt seç veya yeni ekle.</p>
+    </section>
+  </main>
+
+  <div id="toasts"></div>
+
+  <script src="js/db.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>

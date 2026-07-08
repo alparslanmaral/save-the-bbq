@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save the BBQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:ital,wght@0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ANA MENÜ -->
+  <section class="screen active" id="screen-menu">
+    <div class="menu-box">
+      <div class="logo">
+        <span class="logo-save">SAVE</span>
+        <span class="logo-the">the</span>
+        <span class="logo-bbq">BBQ 🔥</span>
+      </div>
+      <p class="tagline">Ted'in ailesi piknik yapacak. Engel olmak isteyenlerin vay haline.</p>
+
+      <div class="menu-stats">
+        <div class="ms"><span>🏅 RP</span><b id="menu-rp">0</b></div>
+        <div class="ms"><span>🏆 En İyi Skor</span><b id="menu-best">—</b></div>
+        <div class="ms"><span>✅ Zafer</span><b id="menu-wins">0</b></div>
+      </div>
+
+      <div class="menu-buttons">
+        <button class="btn primary big" id="btn-new-run">🍖 Yeni Run Başlat</button>
+        <button class="btn" id="btn-skilltree">🌳 Yetenek Ağacı</button>
+        <button class="btn" id="btn-howto">❓ Nasıl Oynanır</button>
+        <a class="btn ghost" href="editor.html">🛠️ İçerik Editörü</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YETENEK AĞACI -->
+  <section class="screen" id="screen-skilltree">
+    <div class="st-wrap">
+      <header class="st-header">
+        <button class="btn small" id="st-back">← Menü</button>
+        <h2>Yetenek Ağacı</h2>
+        <div class="st-rp-badge">🏅 <b id="st-rp">0</b> RP</div>
+      </header>
+      <p class="muted center">Respect Point'ler kalıcıdır. Her run öncesi buradan geliştirme yapabilirsin — run sırasında yapılamaz.</p>
+      <div id="st-nodes"></div>
+    </div>
+  </section>
+
+  <!-- OYUN -->
+  <section class="screen" id="screen-game">
+    <header id="hud">
+      <div class="hud-left">
+        <button class="btn small" id="btn-quit">☰</button>
+        <div class="hud-wave-box">
+          <b id="hud-wave">Dalga 1/50</b>
+          <small id="hud-episode">Backyard Basics</small>
+        </div>
+      </div>
+      <div class="hud-family" id="family-camp" title="Ailenin canı">
+        <span class="fam-icon">👨‍👩‍👧‍👦</span>
+        <div class="fam-bar"><i id="hud-family-fill"></i></div>
+        <b id="hud-family-text">50 / 50</b>
+      </div>
+      <div class="hud-right">
+        <div class="hud-chip gold">💵 <b id="hud-gold">0</b></div>
+        <div class="hud-chip rp">🏅 <b id="hud-rp">0</b></div>
+        <button class="btn small" id="btn-speed">x1</button>
+      </div>
+    </header>
+
+    <div id="game-layout">
+      <aside id="side-left">
+        <h3 class="panel-title">Aktif Boost'lar</h3>
+        <div id="traits-panel"></div>
+      </aside>
+
+      <main id="battlefield">
+        <div id="boss-banner"></div>
+        <div id="board-frame">
+          <div class="family-side" title="Aile burada! Düşmanlar buraya ulaşırsa can gider.">🧺<br>🪑</div>
+          <div id="board"></div>
+          <div class="spawn-side" title="Düşmanlar buradan gelir">☠️</div>
+        </div>
+
+        <div id="prep-bar">
+          <div id="bench-wrap">
+            <span class="bench-label">Bench</span>
+            <div id="bench"></div>
+          </div>
+          <button class="btn primary" id="btn-start-wave">⚔️ Dalgayı Başlat</button>
+        </div>
+
+        <div id="shop" class="basket">
+          <div class="basket-head">
+            <h3>🧺 Picnic Basket</h3>
+            <button class="btn small warn" id="btn-reroll">🔄 Sepeti Yenile <b>(1 ❤️)</b></button>
+          </div>
+          <div id="shop-cards"></div>
+        </div>
+      </main>
+    </div>
+
+    <div id="sell-zone">🗑️ Sat</div>
+  </section>
+
+  <!-- SONUÇ -->
+  <div class="overlay" id="result-overlay">
+    <div class="modal">
+      <h2 id="result-title">🎉 BBQ Kurtarıldı!</h2>
+      <p id="result-sub"></p>
+      <div id="result-stats"></div>
+      <div class="modal-buttons">
+        <button class="btn primary" id="result-again">🔁 Yeni Run</button>
+        <button class="btn" id="result-menu">Ana Menü</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NASIL OYNANIR -->
+  <div class="overlay" id="howto-overlay">
+    <div class="modal wide">
+      <h2>❓ Nasıl Oynanır</h2>
+      <div class="howto-body">
+        <p><b>Amaç:</b> 50 dalga boyunca aileni koru. Her 10. dalgada boss var. 50. dalgadaki Skinny Vegan'ı yenersen oyunu kazanırsın.</p>
+        <p><b>🧺 Picnic Basket:</b> Hazırlık aşamasında sepetten birim satın al. Sepeti beğenmezsen yenileyebilirsin ama <b>1 aile canına</b> mal olur!</p>
+        <p><b>⭐ Birleştirme:</b> Aynı birimden 3 tane topla, otomatik olarak bir üst yıldıza birleşir (can ve hasar x2.2). 3 tane 2⭐ = 3⭐. Güçlenmenin anahtarı bu!</p>
+        <p><b>🎯 Board:</b> Birimleri bench'ten 6x4'lük piknik örtüsüne sürükle. Düşmanlar sağdan gelir, önce birimlerine sonra ailene saldırır. Aile de karşılık verip az da olsa hasar verir.</p>
+        <p><b>✨ Boost'lar:</b> Aynı boost'a sahip birim sayısı arttıkça etkiler güçlenir (Family, Machine, Scum, Household, Dad Lore). Sol paneldeki eşiklere dikkat et.</p>
+        <p><b>💵 Dolar:</b> Savaş sırasında zamanla ve her dalga sonunda kazanılır. Run bitince sıfırlanır. Yaralı birimleri satabilirsin (yarı fiyat).</p>
+        <p><b>🏅 RP:</b> Boss dalgasına ulaşınca +1, bossu yenince +2 RP. RP'ler <b>kalıcıdır</b> — yetenek ağacında harca.</p>
+        <p><b>☠️ Kayıp:</b> Ölen birimler geri gelmez. Ailenin canı biterse run biter ama RP'lerin kalır.</p>
+      </div>
+      <div class="modal-buttons"><button class="btn primary" id="howto-close">Anladım</button></div>
+    </div>
+  </div>
+
+  <div id="toasts"></div>
+
+  <script src="js/db.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

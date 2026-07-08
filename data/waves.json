@@ -1,0 +1,55 @@
+{
+  "totalLevels": 50,
+  "levelsPerEpisode": 10,
+  "hpScalePerLevel": 0.11,
+  "damageScalePerLevel": 0.04,
+  "goldPerWave": 5,
+  "passiveGold": { "amount": 1, "interval": 5 },
+  "startingGold": 8,
+  "familyStartHp": 50,
+  "familyThornDamage": 15,
+  "episodes": [
+    {
+      "name": "Backyard Basics",
+      "levels": [1, 9],
+      "pool": ["giant_ant", "bin_chicken", "lost_chihuahua"],
+      "countBase": 4,
+      "countPerLevel": 0.8,
+      "spawnInterval": 2.0
+    },
+    {
+      "name": "The Park Gets Crowded",
+      "levels": [11, 19],
+      "pool": ["giant_ant", "bin_chicken", "hungry_seagull", "street_dog"],
+      "countBase": 6,
+      "countPerLevel": 0.9,
+      "spawnInterval": 1.8
+    },
+    {
+      "name": "Neighborhood Drama",
+      "levels": [21, 29],
+      "pool": ["hungry_seagull", "street_dog", "hyperactive_kid", "lost_chihuahua"],
+      "countBase": 8,
+      "countPerLevel": 1.0,
+      "spawnInterval": 1.6
+    },
+    {
+      "name": "The Protest",
+      "levels": [31, 39],
+      "pool": ["street_dog", "hyperactive_kid", "eco_activist", "punk_keko"],
+      "countBase": 9,
+      "countPerLevel": 1.1,
+      "spawnInterval": 1.5
+    },
+    {
+      "name": "Final Cookout",
+      "levels": [41, 49],
+      "pool": ["hyperactive_kid", "eco_activist", "punk_keko", "tofu_soldier", "bin_chicken"],
+      "countBase": 10,
+      "countPerLevel": 1.2,
+      "spawnInterval": 1.3
+    }
+  ],
+  "bossLevels": { "10": "karen", "20": "smoke_cloud", "30": "activist_chief", "40": "punk_king", "50": "skinny_vegan" },
+  "bossEscort": { "10": [], "20": ["bin_chicken", "bin_chicken"], "30": ["eco_activist", "eco_activist"], "40": ["punk_keko", "punk_keko"], "50": ["tofu_soldier", "tofu_soldier", "eco_activist"] }
+}

@@ -1,0 +1,61 @@
+{
+  "family": {
+    "name": "Family",
+    "emoji": "👨‍👩‍👧",
+    "color": "#E8A33D",
+    "desc": "Family birimlerine periyodik olarak can yeniler. Aile bir arada güçlüdür.",
+    "effect": "heal",
+    "breakpoints": [
+      { "count": 1, "interval": 15, "amount": 100, "text": "Her 15 sn'de +100 can" },
+      { "count": 2, "interval": 12, "amount": 120, "text": "Her 12 sn'de +120 can" },
+      { "count": 3, "interval": 10, "amount": 150, "text": "Her 10 sn'de +150 can" },
+      { "count": 8, "interval": 6, "amount": 250, "text": "Her 6 sn'de +250 can" }
+    ]
+  },
+  "machine": {
+    "name": "Machine",
+    "emoji": "⚙️",
+    "color": "#8FA3B8",
+    "desc": "Machine birimlerinin saldırı hızını artırır. Teknoloji piknikte de kazanır.",
+    "effect": "attack_speed",
+    "breakpoints": [
+      { "count": 2, "bonus": 0.15, "text": "+%15 saldırı hızı" },
+      { "count": 3, "bonus": 0.30, "text": "+%30 saldırı hızı" },
+      { "count": 4, "bonus": 0.50, "text": "+%50 saldırı hızı" }
+    ]
+  },
+  "scum": {
+    "name": "Scum",
+    "emoji": "💸",
+    "color": "#6FBF73",
+    "desc": "Her dalga sonunda ekstra dolar kazandırır. Paranın kokusu yoktur.",
+    "effect": "income",
+    "breakpoints": [
+      { "count": 2, "bonus": 2, "text": "Dalga sonu +2$" },
+      { "count": 3, "bonus": 4, "text": "Dalga sonu +4$" },
+      { "count": 4, "bonus": 7, "text": "Dalga sonu +7$" }
+    ]
+  },
+  "household": {
+    "name": "Household",
+    "emoji": "🏠",
+    "color": "#5BB6C9",
+    "desc": "Household birimleri aldıkları hasarı azaltır. Ev eşyası dayanıklı olur.",
+    "effect": "armor",
+    "breakpoints": [
+      { "count": 2, "bonus": 0.10, "text": "-%10 alınan hasar" },
+      { "count": 3, "bonus": 0.25, "text": "-%25 alınan hasar" }
+    ]
+  },
+  "dadlore": {
+    "name": "Dad Lore",
+    "emoji": "🧔",
+    "color": "#C97B4A",
+    "desc": "Dad Lore birimlerinin yetenek bekleme sürelerini kısaltır. Babalık tecrübedir.",
+    "effect": "cooldown",
+    "breakpoints": [
+      { "count": 2, "bonus": 0.20, "text": "-%20 cooldown" },
+      { "count": 3, "bonus": 0.40, "text": "-%40 cooldown" }
+    ]
+  }
+}

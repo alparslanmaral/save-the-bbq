@@ -1,0 +1,181 @@
+[
+  {
+    "id": "karen",
+    "name": "Karen",
+    "emoji": "💇‍♀️",
+    "color": "#D98CB3",
+    "hp": 6000,
+    "speed": 0.35,
+    "damage": 40,
+    "interval": 1.2,
+    "level": 10,
+    "desc": "Can barına göre 3 faza ayrılır: kayıt fazı, müdür fazı ve tam çıldırma fazı.",
+    "phases": [
+      {
+        "name": "I'm Recording You!",
+        "until": 0.8,
+        "speedMult": 0.6,
+        "abilities": [
+          { "type": "flash_disable", "interval": 7, "duration": 5 },
+          { "type": "summon", "enemy": "zabita", "count": 1, "interval": 10 }
+        ]
+      },
+      {
+        "name": "Let Me Speak to Your Manager!",
+        "until": 0.3,
+        "speedMult": 1.4,
+        "dodge": 0.2,
+        "abilities": [
+          { "type": "aoe_stun", "interval": 9, "stun": 2, "radius": 1.6 },
+          { "type": "summon", "enemy": "guvenlik", "count": 1, "interval": 12 }
+        ]
+      },
+      {
+        "name": "This is Harassment!",
+        "until": 0,
+        "speedMult": 1.8,
+        "stunImmune": true,
+        "abilities": []
+      }
+    ]
+  },
+  {
+    "id": "smoke_cloud",
+    "name": "Giant Smoke Cloud",
+    "emoji": "☁️",
+    "color": "#7E7E8C",
+    "hp": 14000,
+    "speed": 0.3,
+    "damage": 25,
+    "interval": 0.8,
+    "level": 20,
+    "desc": "Komşunun yaş odunla yaktığı mangaldan doğan dev duman bulutu. İçinden geçtiği her şeyi boğar.",
+    "phases": [
+      {
+        "name": "Slow Burn",
+        "until": 0.5,
+        "speedMult": 1.0,
+        "abilities": [
+          { "type": "aoe_stun", "interval": 10, "stun": 1.5, "radius": 2 }
+        ]
+      },
+      {
+        "name": "Full Choke",
+        "until": 0,
+        "speedMult": 1.5,
+        "dodge": 0.15,
+        "abilities": [
+          { "type": "aoe_stun", "interval": 7, "stun": 2, "radius": 2.5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "activist_chief",
+    "name": "Activist Chief",
+    "emoji": "🥁",
+    "color": "#5C9E63",
+    "hp": 22000,
+    "speed": 0.4,
+    "damage": 35,
+    "interval": 1.0,
+    "level": 30,
+    "desc": "Megafonlu protesto lideri. Sürekli yeni aktivistler çağırır ve onları iyileştirir.",
+    "phases": [
+      {
+        "name": "Peaceful Protest",
+        "until": 0.6,
+        "speedMult": 0.8,
+        "abilities": [
+          { "type": "summon", "enemy": "eco_activist", "count": 2, "interval": 9 }
+        ]
+      },
+      {
+        "name": "Sit-In",
+        "until": 0,
+        "speedMult": 1.3,
+        "stunImmune": true,
+        "abilities": [
+          { "type": "summon", "enemy": "eco_activist", "count": 2, "interval": 7 },
+          { "type": "flash_disable", "interval": 8, "duration": 4 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "punk_king",
+    "name": "Apaçi Punk King",
+    "emoji": "🔊",
+    "color": "#8E44AD",
+    "hp": 32000,
+    "speed": 0.45,
+    "damage": 45,
+    "interval": 0.9,
+    "level": 40,
+    "desc": "Sırtında subwoofer taşıyan keko kralı. Bass drop'ları tüm board'u sarsar.",
+    "phases": [
+      {
+        "name": "Sound Check",
+        "until": 0.7,
+        "speedMult": 0.9,
+        "abilities": [
+          { "type": "aoe_stun", "interval": 8, "stun": 1.5, "radius": 2 },
+          { "type": "summon", "enemy": "punk_keko", "count": 1, "interval": 12 }
+        ]
+      },
+      {
+        "name": "BASS DROP",
+        "until": 0,
+        "speedMult": 1.6,
+        "dodge": 0.2,
+        "stunImmune": true,
+        "abilities": [
+          { "type": "aoe_stun", "interval": 6, "stun": 2, "radius": 2.5 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "skinny_vegan",
+    "name": "Skinny Vegan",
+    "emoji": "🥦",
+    "color": "#3E8E5A",
+    "hp": 50000,
+    "speed": 0.4,
+    "damage": 60,
+    "interval": 1.0,
+    "level": 50,
+    "desc": "Final boss. Mangalın varlığından kişisel olarak rahatsız. Üç fazda tofu ordusu, suçluluk propagandası ve saf öfke.",
+    "phases": [
+      {
+        "name": "Did You Know Meat is Murder?",
+        "until": 0.7,
+        "speedMult": 0.7,
+        "abilities": [
+          { "type": "summon", "enemy": "tofu_soldier", "count": 3, "interval": 8 },
+          { "type": "flash_disable", "interval": 7, "duration": 5 }
+        ]
+      },
+      {
+        "name": "Documentary Screening",
+        "until": 0.35,
+        "speedMult": 1.2,
+        "dodge": 0.25,
+        "abilities": [
+          { "type": "aoe_stun", "interval": 7, "stun": 2, "radius": 2 },
+          { "type": "summon", "enemy": "eco_activist", "count": 2, "interval": 10 }
+        ]
+      },
+      {
+        "name": "Kale Rage",
+        "until": 0,
+        "speedMult": 2.0,
+        "stunImmune": true,
+        "dodge": 0.15,
+        "abilities": [
+          { "type": "aoe_stun", "interval": 6, "stun": 1.5, "radius": 2.5 }
+        ]
+      }
+    ]
+  }
+]
